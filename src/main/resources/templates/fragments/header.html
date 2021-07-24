@@ -1,7 +1,7 @@
 <!--====== Header Wrapper ======-->
 <div class="header-wrapper" th:fragment="header">
 
-    <!--====== Main Header ======-->
+    <!--======   Main Header ======-->
     <header th:attr="class=${page != null && page == 'home' ? 'header--style-3' : 'header--style-1 header--box-shadow'}" >
 
         <!--====== Nav 1 ======-->
@@ -190,11 +190,11 @@
                                                 <span class="subtotal-value">$16</span></div>
                                             <div class="mini-action">
 
-                                                <a class="mini-link btn--e-brand-b-2" href="checkout.html">PROCEED
+                                                <a class="mini-link btn--e-brand-b-2" href="/checkout">PROCEED
                                                     TO CHECKOUT</a>
 
                                                 <a class="mini-link btn--e-transparent-secondary-b-2"
-                                                   href="cart.html">VIEW CART</a></div>
+                                                   href="/cart">VIEW CART</a></div>
                                         </div>
                                         <!--====== End - Mini Product Statistics ======-->
                                     </div>
@@ -216,19 +216,19 @@
                                                 <span>Account</span></a></li>
                                         <li>
 
-                                            <a href="/signup"><i class="fas fa-user-plus u-s-m-r-6"></i>
+                                            <a href="/sign-up"><i class="fas fa-user-plus u-s-m-r-6"></i>
 
-                                                <span>Signup</span></a></li>
+                                                <span>Sign-up</span></a></li>
                                         <li>
 
-                                            <a href="/signin"><i class="fas fa-lock u-s-m-r-6"></i>
+                                            <a href="/sign-in"><i class="fas fa-lock u-s-m-r-6"></i>
 
-                                                <span>Signin</span></a></li>
+                                                <span>Sign-in</span></a></li>
                                         <li>
 
-                                            <a href="/signout"><i class="fas fa-lock-open u-s-m-r-6"></i>
+                                            <a href="/sign-out"><i class="fas fa-lock-open u-s-m-r-6"></i>
 
-                                                <span>Signout</span></a></li>
+                                                <span>Sign-out</span></a></li>
                                     </ul>
                                     <!--====== End - Dropdown ======-->
                                 </li>
@@ -300,7 +300,7 @@
                                 </li>
                                 <li class="has-dropdown">
 
-                                    <a>Contact</a>
+                                    <a href="/contact">Contact</a>
                                 </li>
                             </ul>
                             <!--====== End - List ======-->
