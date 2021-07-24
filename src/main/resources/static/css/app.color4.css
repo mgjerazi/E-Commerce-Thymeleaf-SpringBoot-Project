@@ -3859,17 +3859,12 @@ input::-ms-clear {
   -webkit-transform: scale(0.9);
           transform: scale(0.9); }
 
-.post-video-block .post-video-link:before {
-  content: '';
-  background: url(../video/video-play.png) no-repeat 0 0;
-  background-size: contain; }
+
 
 .post-video-block.process .post-video-link:before {
   content: none; }
 
-.post-video-block.process.pause .post-video-link:before {
-  content: '';
-  background: url(../video/video-pause.png) no-repeat; }
+
 
 .post-center-wrap {
   display: -ms-flexbox;
