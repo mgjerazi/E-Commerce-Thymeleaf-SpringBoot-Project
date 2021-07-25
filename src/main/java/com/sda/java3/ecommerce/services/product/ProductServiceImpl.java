@@ -4,10 +4,13 @@ import com.sda.java3.ecommerce.domains.Category;
 import com.sda.java3.ecommerce.domains.Product;
 import com.sda.java3.ecommerce.repositories.CategoryRepository;
 import com.sda.java3.ecommerce.repositories.ProductRepository;
+import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Service;
 
+import javax.persistence.EntityNotFoundException;
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.UUID;
 
 @Service
 public class ProductServiceImpl implements ProductService {
@@ -23,6 +26,16 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public List<Product> getFeaturedProducts() {
         return productRepository.getFeaturedProducts();
+    }
+
+    @Override
+    public Product getProductById(String id) {
+        try {
+            return productRepository.getById(UUID.fromString(id));
+        } catch (DataAccessException ex) {
+            ex.printStackTrace();
+        }
+        return null;
     }
 
     @Override
