@@ -20,6 +20,7 @@ public class HomeController {
 
     @GetMapping("/")
     public String home(ModelMap map) {
+        //productService.createDummyProducts();
         List<Product> featuredProducts = productService.getFeaturedProducts();
         map.addAttribute("page", "home");
         map.addAttribute("featuredProducts", featuredProducts);
