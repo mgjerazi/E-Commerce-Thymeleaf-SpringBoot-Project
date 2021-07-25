@@ -7,4 +7,5 @@ import java.util.List;
 public interface ProductService {
     List<Product> getFeaturedProducts();
     void createDummyProducts();
+    Product getProductById(String id);
 }

@@ -28,7 +28,7 @@
 
                                                 <span class="u-c-brand" th:text="'$' + ${product.price}"></span></span>
 
-                                    <a class="shop-now-link btn--e-brand" href="/product">SHOP NOW</a>
+                                    <a class="shop-now-link btn--e-brand" th:href="'/product-detail/' + ${product.id}">SHOP NOW</a>
                                 </div>
                             </div>
                         </div>
