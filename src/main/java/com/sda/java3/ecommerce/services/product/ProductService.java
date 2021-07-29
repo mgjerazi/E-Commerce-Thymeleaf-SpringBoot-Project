@@ -6,6 +6,7 @@ import java.util.List;
 
 public interface ProductService {
     List<Product> getFeaturedProducts();
+    List<Product> getRecentProducts();
     void createDummyProducts();
     Product getProductById(String id);
 }

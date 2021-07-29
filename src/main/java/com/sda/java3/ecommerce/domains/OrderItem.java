@@ -27,6 +27,7 @@ public class OrderItem {
     protected UUID id;
 
     @Column(name = "product_id")
+    @Type(type = "org.hibernate.type.UUIDCharType")
     protected UUID productId;
 
     @Column(name = "product_description")
@@ -39,6 +40,7 @@ public class OrderItem {
     protected double price;
 
     @Column(name = "category_id")
+    @Type(type = "org.hibernate.type.UUIDCharType")
     protected UUID categoryId;
 
     @Column(name = "category_name")

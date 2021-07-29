@@ -28,5 +28,6 @@ public class Category {
     protected String name;
 
     @Column(name = "parent_id")
+    @Type(type = "org.hibernate.type.UUIDCharType")
     protected  UUID parentId;
 }

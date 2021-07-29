@@ -8,6 +8,7 @@ import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityNotFoundException;
+import javax.transaction.Transactional;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.UUID;
@@ -29,6 +30,11 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
+    public List<Product> getRecentProducts() {
+        return productRepository.getRecentProducts();
+    }
+
+    @Override
     public Product getProductById(String id) {
         try {
             return productRepository.getById(UUID.fromString(id));
@@ -39,18 +45,37 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
+    @Transactional
     public void createDummyProducts() {
-        Category category = Category.builder()
+        Category menCategory = Category.builder()
                 .name("Men")
                 .build();
-        categoryRepository.save(category);
+        categoryRepository.save(menCategory);
+
+        Category womenCategory = Category.builder()
+                .name("Women")
+                .build();
+        categoryRepository.save(womenCategory);
 
 
         Product product = Product.builder()
                 .createdAt(LocalDateTime.now())
-                .categoryId(category.getId())
-                .name("Product 1")
-                .description("This is the description of product 1")
+                .categoryId(menCategory.getId())
+                .name("Versace T-shirt")
+                .description("This is the description of Versace T-Shirt")
+                .price(500)
+                .image("image1.jpg")
+                .sale(false)
+                .featured(true)
+                .featureImage("featured_image_1.jpg")
+                .build();
+        productRepository.save(product);
+
+        Product womanProduct = Product.builder()
+                .createdAt(LocalDateTime.now())
+                .categoryId(womenCategory.getId())
+                .name("Armani Dress")
+                .description("This is the description of Armani Dress")
                 .price(500)
                 .image("image1.jpg")
                 .sale(false)
@@ -58,6 +83,6 @@ public class ProductServiceImpl implements ProductService {
                 .featureImage("featured_image_1.jpg")
                 .build();
 
-        productRepository.save(product);
+        productRepository.save(womanProduct);
     }
 }

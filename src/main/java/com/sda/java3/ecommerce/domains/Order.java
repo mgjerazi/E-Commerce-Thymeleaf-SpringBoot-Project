@@ -32,6 +32,7 @@ public class Order {
     protected double total;
 
     @Column(name = "user_id")
+    @Type(type = "org.hibernate.type.UUIDCharType")
     protected UUID userId;
 
     @Column(name = "username")
