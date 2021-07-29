@@ -13,9 +13,10 @@
 
                     <!--====== Main Logo ======-->
 
-                    <a class="main-logo" href="index-3.html">
-
-                        <img src="images/logo/logo-2.png" alt=""></a>
+                    <a class="main-logo" href="/">
+                        <img th:if="${page != null && page.equals('home')}" src="/images/logo/logo-2.png" alt="">
+                        <img th:if="${page == null || !page.equals('home')}" src="/images/logo/logo-1.png" alt="">
+                    </a>
                     <!--====== End - Main Logo ======-->
 
 
@@ -44,7 +45,7 @@
                             <span class="ah-close">✕ Close</span>
 
                             <!--====== List ======-->
-                            <ul class="ah-list ah-list--design1 ah-list--link-color-secondary">
+                            <ul th:class="'ah-list ah-list--design1 ' + ${page != null && page.equals('home') ? 'ah-list--link-color-white' : 'ah-list--link-color-primary' }">
                                 <li class="has-dropdown">
 
                                     <a class="mini-cart-shop-link"><i class="fas fa-shopping-bag"></i>
@@ -264,7 +265,7 @@
                             <span class="ah-close">✕ Close</span>
 
                             <!--====== List ======-->
-                            <ul class="ah-list ah-list--design2 ah-list--link-color-secondary">
+                            <ul th:class="'ah-list ah-list--design2 ' + ${page != null && page.equals('home') ? 'ah-list--link-color-white' : 'ah-list--link-color-primary' }">
                                 <li>
                                     <a href="/">Home</a>
                                 </li>

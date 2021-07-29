@@ -45,7 +45,6 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    @Transactional
     public void createDummyProducts() {
         Category menCategory = Category.builder()
                 .name("Men")
@@ -77,10 +76,10 @@ public class ProductServiceImpl implements ProductService {
                 .name("Armani Dress")
                 .description("This is the description of Armani Dress")
                 .price(500)
-                .image("image1.jpg")
+                .image("image2.jpg")
                 .sale(false)
                 .featured(true)
-                .featureImage("featured_image_1.jpg")
+                .featureImage("featured_image_2.jpg")
                 .build();
 
         productRepository.save(womanProduct);
