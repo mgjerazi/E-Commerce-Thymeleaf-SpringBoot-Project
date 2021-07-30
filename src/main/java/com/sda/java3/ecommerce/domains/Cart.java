@@ -1,6 +1,5 @@
 package com.sda.java3.ecommerce.domains;
 
-import com.sda.java3.ecommerce.utils.UserRole;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -9,8 +8,6 @@ import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
-import java.util.List;
 import java.util.UUID;
 
 @Data
@@ -18,8 +15,7 @@ import java.util.UUID;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "ec_user")
-public class User {
+public class Cart {
 
     @Id
     @GeneratedValue(generator = "uuid2")
@@ -28,14 +24,13 @@ public class User {
     @Type(type = "org.hibernate.type.UUIDCharType")
     protected UUID id;
 
-    protected String firstName;
-    protected String lastName;
-    protected String email;
-    protected String password;
-    @Enumerated(value = EnumType.STRING)
-    protected UserRole role;
-    private LocalDateTime createdAt;
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    protected User user;
 
-    @OneToMany(mappedBy = "user")
-    protected List<Cart> items;
+    @ManyToOne
+    @JoinColumn(name = "product_id")
+    protected Product product;
+
+    protected Integer quantity;
 }

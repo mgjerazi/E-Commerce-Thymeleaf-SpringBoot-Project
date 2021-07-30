@@ -33,18 +33,7 @@
                         <button class="btn btn--icon fas main-search-button fa-search" type="submit"></button>
                     </form>
 
-                    <form th:if="${filter != null && !#strings.isEmpty(filter.query)}" class="main-form" th:action="@{/products}" th:object="${filter}" method="post">
 
-                        <label for="main-search"></label>
-
-                        <input
-                                th:class="'input-text input-text--border-radius ' + ${page != null && page == 'home' ? 'input-text--style-2' : 'input-text--style-1'}"
-                                type="text"
-                                id="main-search" placeholder="Search" th:value="${filter.query}">
-
-                        <button class="btn btn--icon fas main-search-button fa-times" type="submit"></button>
-
-                    </form>
                     <!--====== End - Search Form ======-->
 
 
@@ -292,13 +281,30 @@
 
                                     <span class="js-menu-toggle"></span>
                                     <ul style="width:170px">
-                                        <li th:each="category : ${rootCategories}" class="">
-                                            <a th:href="'/products/category/' + ${category.id}" th:text="${category.name}"></a>
+                                        <li class="">
+
+                                            <a>New Releases</a>
+                                        </li>
+
+                                        <li class="">
+
+                                            <a>Woman</a>
+                                        </li>
+
+                                        <li class="">
+
+                                            <a>Men</a>
+                                        </li>
+
+                                        <li class="">
+
+                                            <a>Sales</a>
                                         </li>
                                     </ul>
                                     <!--====== End - Dropdown ======-->
                                 </li>
-                                <li>
+                                <li class="has-dropdown">
+
                                     <a href="/contact">Contact</a>
                                 </li>
                             </ul>

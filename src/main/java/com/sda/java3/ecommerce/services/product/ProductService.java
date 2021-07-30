@@ -11,4 +11,5 @@ public interface ProductService {
     List<Product> getProducts(ProductListFilter filter);
     void createDummyProducts();
     Product getProductById(String id);
+    List<Product> findAll();
 }

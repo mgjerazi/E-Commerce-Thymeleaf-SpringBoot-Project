@@ -1,6 +1,5 @@
 package com.sda.java3.ecommerce.controllers;
 
-import com.sda.java3.ecommerce.domains.Category;
 import com.sda.java3.ecommerce.domains.Product;
 import com.sda.java3.ecommerce.services.category.CategoryService;
 import com.sda.java3.ecommerce.services.product.ProductService;
@@ -14,7 +13,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.Arrays;
-import java.util.List;
 
 @Controller
 public class ProductController extends BaseController {
@@ -76,3 +74,14 @@ public class ProductController extends BaseController {
         return filterProducts(filter, modelMap);
     }
 }
+//    @GetMapping("/products")
+//    public String home(ModelMap modelMap, String keyword) {
+//        if (keyword != null){
+//            modelMap.addAttribute("products", productService.findByKeyword(keyword));
+//        } else {
+//            modelMap.addAttribute("productList", productService.findAll());
+//        }
+//
+//        return "product-list";
+//
+//    }

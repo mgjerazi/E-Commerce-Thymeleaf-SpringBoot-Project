@@ -11,6 +11,7 @@ import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.UUID;
 
 @Data
@@ -57,6 +58,12 @@ public class Product {
     @Column(name = "created_at")
     private LocalDateTime createdAt;
 
+    @Column(name = "color")
+    private String color;
+
+    @Column(name = "size")
+    private String size;
+
     @Column(name = "category_id")
     @Type(type = "org.hibernate.type.UUIDCharType")
     protected UUID categoryId;
@@ -65,4 +72,7 @@ public class Product {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(insertable = false, updatable = false, name = "category_id")
     protected Category category;
+
+    @OneToMany(mappedBy = "product")
+    protected List<Cart> items;
 }

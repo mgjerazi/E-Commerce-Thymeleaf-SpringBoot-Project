@@ -18,7 +18,6 @@ public class ContactController extends BaseController {
     @GetMapping("/contact")
     public String home(ModelMap modelMap) {
         initModelMap(modelMap);
-
         modelMap.addAttribute("breadcrumbs", Arrays.asList(
                 Breadcrumb.builder().name("Home").url("/").build(),
                 Breadcrumb.builder().name("Contact").url("/contact").last(true).build()

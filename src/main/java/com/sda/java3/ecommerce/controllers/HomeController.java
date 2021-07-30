@@ -4,7 +4,6 @@ package com.sda.java3.ecommerce.controllers;
 import com.sda.java3.ecommerce.domains.Product;
 import com.sda.java3.ecommerce.services.category.CategoryService;
 import com.sda.java3.ecommerce.services.product.ProductService;
-import com.sda.java3.ecommerce.utils.ProductListFilter;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -26,6 +25,7 @@ public class HomeController extends BaseController {
         map.addAttribute("featuredProducts", featuredProducts);
         map.addAttribute("recentProducts", productService.getRecentProducts());
 
+        map.addAttribute("productList", productService.findAll());
         return "home";
     }
 }

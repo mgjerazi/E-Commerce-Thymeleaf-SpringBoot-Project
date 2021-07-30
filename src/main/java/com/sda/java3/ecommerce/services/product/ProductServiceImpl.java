@@ -64,6 +64,12 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
+    public List<Product> findAll() {
+        return productRepository.findAll();
+    }
+
+
+    @Override
     public void createDummyProducts() {
         Category menCategory = Category.builder()
                 .name("Men")
@@ -84,7 +90,7 @@ public class ProductServiceImpl implements ProductService {
                 .price(500)
                 .image("image1.jpg")
                 .sale(false)
-                .views(0)
+                .views(2)
                 .featured(true)
                 .featureImage("featured_image_1.jpg")
                 .build();
@@ -97,7 +103,7 @@ public class ProductServiceImpl implements ProductService {
                 .name("Armani Dress")
                 .description("This is the description of Armani Dress")
                 .price(500)
-                .views(0)
+                .views(2)
                 .image("image2.jpg")
                 .sale(false)
                 .featured(true)
