@@ -21,7 +21,7 @@
 
 
                     <!--====== Search Form ======-->
-                    <form class="main-form" th:action="@{/products}" th:object="${filter}" method="post">
+                    <form th:if="${filter == null || #strings.isEmpty(filter.query)}" class="main-form" th:action="@{/products}" th:object="${filter}" method="post">
 
                         <label for="main-search"></label>
 
@@ -30,20 +30,19 @@
                                 type="text"
                                 id="main-search" placeholder="Search" th:field="*{query}">
 
-                        <button th:class="'btn btn--icon fas main-search-button  ' + ${filter != null && (!#strings.isEmpty(filter.query) || !#strings.isEmpty(filter.categoryId)) ? 'fa-times' : 'fa-search'}"></button>
-
+                        <button class="btn btn--icon fas main-search-button fa-search" type="submit"></button>
                     </form>
 
-                    <form class="main-form" th:action="@{/products}" th:object="${filter}" method="post">
+                    <form th:if="${filter != null && !#strings.isEmpty(filter.query)}" class="main-form" th:action="@{/products}" th:object="${filter}" method="post">
 
                         <label for="main-search"></label>
 
                         <input
                                 th:class="'input-text input-text--border-radius ' + ${page != null && page == 'home' ? 'input-text--style-2' : 'input-text--style-1'}"
                                 type="text"
-                                id="main-search" placeholder="Search" th:field="*{query}">
+                                id="main-search" placeholder="Search" th:value="${filter.query}">
 
-                        <button th:class="'btn btn--icon fas main-search-button  ' + ${filter != null && (!#strings.isEmpty(filter.query) || !#strings.isEmpty(filter.categoryId)) ? 'fa-times' : 'fa-search'}"></button>
+                        <button class="btn btn--icon fas main-search-button fa-times" type="submit"></button>
 
                     </form>
                     <!--====== End - Search Form ======-->

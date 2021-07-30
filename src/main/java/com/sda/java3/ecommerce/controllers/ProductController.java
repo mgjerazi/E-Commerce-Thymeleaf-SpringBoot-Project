@@ -67,4 +67,12 @@ public class ProductController extends BaseController {
         modelMap.addAttribute("product", product);
         return "product-detail";
     }
+
+    @GetMapping("/products/category/{id}")
+    public String filterByCategory(@PathVariable String id, ModelMap modelMap) {
+        initModelMap(modelMap);
+        ProductListFilter filter = new ProductListFilter();
+        filter.setCategoryId(id);
+        return filterProducts(filter, modelMap);
+    }
 }
