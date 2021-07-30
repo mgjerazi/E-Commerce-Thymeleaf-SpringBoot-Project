@@ -4,6 +4,8 @@ import com.sda.java3.ecommerce.domains.Category;
 import com.sda.java3.ecommerce.domains.Product;
 import com.sda.java3.ecommerce.repositories.CategoryRepository;
 import com.sda.java3.ecommerce.repositories.ProductRepository;
+import com.sda.java3.ecommerce.utils.ProductListFilter;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Service;
 
@@ -35,9 +37,26 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
+    public List<Product> getProducts(ProductListFilter filter) {
+        if (filter != null && filter.getCategoryId() != null && !filter.getCategoryId().isEmpty()) {
+            Category category = categoryRepository.getById(UUID.fromString(filter.getCategoryId()));
+            if (category != null)
+                filter.setCategoryName(category.getName());
+        }
+
+        return productRepository.getList(
+                StringUtils.isNotBlank(filter.getCategoryId()) ? filter.getCategoryId() : null,
+                StringUtils.isNotBlank(filter.getQuery()) ? filter.getQuery() : null
+        );
+    }
+
+    @Override
     public Product getProductById(String id) {
         try {
-            return productRepository.getById(UUID.fromString(id));
+            Product product = productRepository.getById(UUID.fromString(id));
+            product.setViews(product.getViews() + 1);
+            productRepository.save(product);
+            return product;
         } catch (DataAccessException ex) {
             ex.printStackTrace();
         }
@@ -65,9 +84,11 @@ public class ProductServiceImpl implements ProductService {
                 .price(500)
                 .image("image1.jpg")
                 .sale(false)
+                .views(0)
                 .featured(true)
                 .featureImage("featured_image_1.jpg")
                 .build();
+
         productRepository.save(product);
 
         Product womanProduct = Product.builder()
@@ -76,6 +97,7 @@ public class ProductServiceImpl implements ProductService {
                 .name("Armani Dress")
                 .description("This is the description of Armani Dress")
                 .price(500)
+                .views(0)
                 .image("image2.jpg")
                 .sale(false)
                 .featured(true)

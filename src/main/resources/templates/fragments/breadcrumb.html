@@ -1,0 +1,8 @@
+<div class="pd-breadcrumb u-s-m-b-30" th:fragment="breadcrumbs">
+    <ul class="pd-breadcrumb__list">
+        <li th:class="${breadcrumb.last ? 'is-marked' : 'has-separator'}" th:each="breadcrumb : ${breadcrumbs}">
+            <a th:href="${breadcrumb.url}" th:text="${breadcrumb.name}"></a>
+        </li>
+
+    </ul>
+</div>

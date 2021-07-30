@@ -21,14 +21,30 @@
 
 
                     <!--====== Search Form ======-->
-                    <form class="main-form">
+                    <form class="main-form" th:action="@{/products}" th:object="${filter}" method="post">
 
                         <label for="main-search"></label>
 
-                        <input class="input-text input-text--border-radius input-text--style-1" type="text"
-                               id="main-search" placeholder="Search">
+                        <input
+                                th:class="'input-text input-text--border-radius ' + ${page != null && page == 'home' ? 'input-text--style-2' : 'input-text--style-1'}"
+                                type="text"
+                                id="main-search" placeholder="Search" th:field="*{query}">
 
-                        <button class="btn btn--icon fas fa-search main-search-button" type="submit"></button>
+                        <button th:class="'btn btn--icon fas main-search-button  ' + ${filter != null && (!#strings.isEmpty(filter.query) || !#strings.isEmpty(filter.categoryId)) ? 'fa-times' : 'fa-search'}"></button>
+
+                    </form>
+
+                    <form class="main-form" th:action="@{/products}" th:object="${filter}" method="post">
+
+                        <label for="main-search"></label>
+
+                        <input
+                                th:class="'input-text input-text--border-radius ' + ${page != null && page == 'home' ? 'input-text--style-2' : 'input-text--style-1'}"
+                                type="text"
+                                id="main-search" placeholder="Search" th:field="*{query}">
+
+                        <button th:class="'btn btn--icon fas main-search-button  ' + ${filter != null && (!#strings.isEmpty(filter.query) || !#strings.isEmpty(filter.categoryId)) ? 'fa-times' : 'fa-search'}"></button>
+
                     </form>
                     <!--====== End - Search Form ======-->
 
@@ -277,30 +293,13 @@
 
                                     <span class="js-menu-toggle"></span>
                                     <ul style="width:170px">
-                                        <li class="">
-
-                                            <a>New Releases</a>
-                                        </li>
-
-                                        <li class="">
-
-                                            <a>Woman</a>
-                                        </li>
-
-                                        <li class="">
-
-                                            <a>Men</a>
-                                        </li>
-
-                                        <li class="">
-
-                                            <a>Sales</a>
+                                        <li th:each="category : ${rootCategories}" class="">
+                                            <a th:href="'/products/category/' + ${category.id}" th:text="${category.name}"></a>
                                         </li>
                                     </ul>
                                     <!--====== End - Dropdown ======-->
                                 </li>
-                                <li class="has-dropdown">
-
+                                <li>
                                     <a href="/contact">Contact</a>
                                 </li>
                             </ul>

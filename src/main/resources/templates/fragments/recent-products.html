@@ -1,0 +1,80 @@
+<div class="u-s-p-y-60" th:fragment="recent-products">
+
+    <!--====== Section Intro ======-->
+    <div class="section__intro u-s-m-b-46">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section__text-wrap">
+                        <h1 class="section__heading u-c-secondary u-s-m-b-12">RECENT PRODUCTS</h1>
+                        <span class="section__span u-c-silver">NEWLY ADDED PRODUCTS</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--====== End - Section Intro ======-->
+
+
+    <!--====== Section Content ======-->
+    <div class="section__content">
+        <div class="container">
+            <div class="row" th:if="${recentProducts != null && recentProducts.size() > 0}">
+                <div th:each="product: ${recentProducts}" class="col-lg-3 col-md-4 col-sm-6 u-s-m-b-30">
+                    <div class="product-r u-h-100">
+                        <div class="product-r__container">
+
+                            <a class="aspect aspect--bg-grey aspect--square u-d-block" th:href="'/product-detail/' + ${product.id}">
+                                <img class="aspect__img"
+                                     th:src="'/images/product/' + ${product.image}"
+                                     th:alt="${product.name}"
+                                >
+                            </a>
+                            <div class="product-r__action-wrap">
+                                <ul class="product-r__action-list">
+                                    <li>
+
+                                        <a th:href="'/product-detail/' + ${product.id}">
+                                            <i class="fas fa-eye"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="product-r__info-wrap">
+
+                                <span class="product-r__category" th:if="${product.categoryId != null}">
+                                    <a th:href="'/product-detail/' + ${product.id}"
+                                       th:text="${product.category.name}"></a>
+                                </span>
+                            <div class="product-r__n-p-wrap">
+                                    <span class="product-r__name">
+                                        <a th:href="'/product-detail/' + ${product.id}" th:text="${product.name}"></a>
+                                    </span>
+
+                                <span class="product-r__price">
+                                        <del th:if="${product.sale}" th:text="'$' + ${product.price}" style="color: lightgray"></del>
+                                        <span th:text="'$' + ${product.sale ? product.salePrice : product.price}"></span>
+                                    </span>
+                            </div>
+
+                            <span class="product-r__description"
+                                  th:if="${!#strings.isEmpty(product.description)}"
+                                  th:text="${#strings.abbreviate(product.description,50)}"
+                            >
+                                </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" th:if="${recentProducts == null || recentProducts.size() < 1}">
+                <div class="col-12">
+                    <div class="alert alert-warning" role="alert">
+                        There are no recent products!
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--====== End - Section Content ======-->
+</div>

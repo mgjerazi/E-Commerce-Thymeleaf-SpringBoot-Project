@@ -45,6 +45,9 @@ public class Product {
     @Column(name = "sale_price")
     protected double salePrice = 0;
 
+    @Column(name = "views")
+    protected int views = 0;
+
     @Column(name = "featured")
     protected boolean featured = false;
 
@@ -54,7 +57,7 @@ public class Product {
     @Column(name = "created_at")
     private LocalDateTime createdAt;
 
-    @Column(name = "order_id")
+    @Column(name = "category_id")
     @Type(type = "org.hibernate.type.UUIDCharType")
     protected UUID categoryId;
 

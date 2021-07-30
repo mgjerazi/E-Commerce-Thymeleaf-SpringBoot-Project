@@ -6,53 +6,30 @@
 <body class="config">
 
 <div id="app">
+
     <div th:replace="fragments/header :: header"></div>
 
     <!--====== Section 1 ======-->
     <div class="u-s-p-t-90">
         <div class="container">
+            <div clas="row">
+                <div class="col-12">
+                    <!--====== Product Breadcrumb ======-->
+                    <div th:replace="/fragments/breadcrumb :: breadcrumbs"></div>
+                    <!--====== End - Product Breadcrumb ======-->
+                </div>
+            </div>
             <div class="row">
                 <div class="col-lg-5">
-
-                    <!--====== Product Breadcrumb ======-->
-                    <div class="pd-breadcrumb u-s-m-b-30">
-                        <ul class="pd-breadcrumb__list">
-                            <li class="has-separator">
-
-                                <a href="index.hml">Home</a></li>
-                            <li class="has-separator">
-
-                                <a href="shop-side-version-2.html">Electronics</a></li>
-                            <li class="has-separator">
-
-                                <a href="shop-side-version-2.html">DSLR Cameras</a></li>
-                            <li class="is-marked">
-
-                                <a href="shop-side-version-2.html">Nikon Cameras</a></li>
-                        </ul>
-                    </div>
-                    <!--====== End - Product Breadcrumb ======-->
 
 
                     <!--====== Product Detail Zoom ======-->
                     <div class="pd u-s-m-b-30">
                         <div class="slider-fouc pd-wrap">
                             <div id="pd-o-initiate">
-                                <div class="pd-o-img-wrap" data-src="images/product/product-d-1.jpg">
+                                <div class="pd-o-img-wrap" data-th-attr="data-src='/images/product/' + ${product.image}">
 
-                                    <img class="u-img-fluid" src="images/product/product-d-1.jpg" data-zoom-image="images/product/product-d-1.jpg" alt=""></div>
-                                <div class="pd-o-img-wrap" data-src="images/product/product-d-2.jpg">
-
-                                    <img class="u-img-fluid" src="images/product/product-d-2.jpg" data-zoom-image="images/product/product-d-2.jpg" alt=""></div>
-                                <div class="pd-o-img-wrap" data-src="images/product/product-d-3.jpg">
-
-                                    <img class="u-img-fluid" src="images/product/product-d-3.jpg" data-zoom-image="images/product/product-d-3.jpg" alt=""></div>
-                                <div class="pd-o-img-wrap" data-src="images/product/product-d-4.jpg">
-
-                                    <img class="u-img-fluid" src="images/product/product-d-4.jpg" data-zoom-image="images/product/product-d-4.jpg" alt=""></div>
-                                <div class="pd-o-img-wrap" data-src="images/product/product-d-5.jpg">
-
-                                    <img class="u-img-fluid" src="images/product/product-d-5.jpg" data-zoom-image="images/product/product-d-5.jpg" alt=""></div>
+                                    <img class="u-img-fluid" th:src="'/images/product/' + ${product.image}" data-th-attr="data-zoom-image='/images/product/' + ${product.image}" th:alt="${product.name}"></div>
                             </div>
 
                             <span class="pd-text">Click for larger zoom</span>
@@ -61,20 +38,8 @@
                             <div class="slider-fouc">
                                 <div id="pd-o-thumbnail">
                                     <div>
-
-                                        <img class="u-img-fluid" src="images/product/product-d-1.jpg" alt=""></div>
-                                    <div>
-
-                                        <img class="u-img-fluid" src="images/product/product-d-2.jpg" alt=""></div>
-                                    <div>
-
-                                        <img class="u-img-fluid" src="images/product/product-d-3.jpg" alt=""></div>
-                                    <div>
-
-                                        <img class="u-img-fluid" src="images/product/product-d-4.jpg" alt=""></div>
-                                    <div>
-
-                                        <img class="u-img-fluid" src="images/product/product-d-5.jpg" alt=""></div>
+                                        <img class="u-img-fluid" th:src="'/images/product/' + ${product.image}" th:alt="${product.name}">
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -86,25 +51,26 @@
                     <!--====== Product Right Side Details ======-->
                     <div class="pd-detail" th:if="${product != null}">
                         <div>
+                            <span class="pd-detail__name" th:text="${product.name}"></span>
+                        </div>
 
-                            <span class="pd-detail__name" th:text="${product.name}"></span></div>
                         <div>
                             <div class="pd-detail__inline">
 
-                                <span class="pd-detail__price" th:text="'$' + ${product.price}"></span>
-                                <span class="pd-detail__discount" th:if="${product.sale}" th:text="'$' + ${product.salePrice}"> </span><del class="pd-detail__del">$28.97</del></div>
+                                <span class="pd-detail__price" th:if="${!product.sale}" th:text="'$' + ${product.price}"></span>
+                                <span class="pd-detail__discount" th:if="${product.sale}" th:text="'$' + ${product.salePrice}"></span>
+                                <del class="pd-detail__del" th:if="${product.sale}" th:text="${'$' + product.price}"></del>
+                            </div>
                         </div>
                         <div class="u-s-m-b-15">
 
                             <span class="pd-detail__preview-desc" th:text="${product.description}"></span></div>
                         <div class="u-s-m-b-15">
                             <div class="pd-detail__inline">
-
-                                        <span class="pd-detail__click-wrap"><i class="far fa-heart u-s-m-r-6"></i>
-
-                                            <a href="signin.html">Add to Wishlist</a>
-
-                                            <span class="pd-detail__click-count">(222)</span></span></div>
+                                <span class="pd-detail__click-wrap">
+                                    <span class="pd-detail__click-count" th:text="'Views: ' + ${product.views}"></span>
+                                </span>
+                            </div>
                         </div>
 
                         <div class="u-s-m-b-15">
@@ -119,7 +85,8 @@
 
                                             <input class="input-counter__text input-counter--text-primary-style" type="text" value="1" data-min="1" data-max="1000">
 
-                                            <span class="input-counter__plus fas fa-plus"></span></div>
+                                            <span class="input-counter__plus fas fa-plus"></span>
+                                        </div>
                                         <!--====== End - Input Counter ======-->
                                     </div>
                                     <div class="u-s-m-b-15">
@@ -161,7 +128,7 @@
                             <div class="tab-pane fade show active" id="pd-desc">
                                 <div class="pd-tab__desc">
                                     <div class="u-s-m-b-15">
-                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                                        <p th:text="${product.description}"></p>
                                     </div>
 
                                     <div class="u-s-m-b-30">
@@ -186,12 +153,8 @@
                                                 <tbody>
 
                                                 <tr>
-                                                    <td>Color</td>
-                                                    <td>Green, Blue, Red</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Size</td>
-                                                    <td>XL</td>
+                                                    <td>Category</td>
+                                                    <td th:text="${product.category.name}"></td>
                                                 </tr>
                                                 </tbody>
                                             </table>
@@ -199,16 +162,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <!--====== End - Tab 1 ======-->
-
-
-                            <!--====== Tab 2 ======-->
-                            <!--====== End - Tab 2 ======-->
-
-
-                            <!--====== Tab 3 ======-->
-
-                            <!--====== End - Tab 3 ======-->
                         </div>
                     </div>
                 </div>
