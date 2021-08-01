@@ -19,14 +19,12 @@ import java.util.UUID;
 public class CategoryApiController {
     private final CategoryService categoryService;
 
-    @GetMapping("/{id}")
-    public ResponseEntity<Category> getCategoryById(@PathVariable UUID id) {
-        var item = this.categoryService.findById(id);
-
-        return item.isPresent()
-                ? ResponseEntity.ok(item.get())
-                : new ResponseEntity(HttpStatus.NOT_FOUND);
-    }
+//    @GetMapping("/id")
+//    public ResponseEntity<Product> getProductById(@PathVariable UUID id) {
+////        var item = this.productService.getProductById(id.toString());
+//
+////        return new ResponseEntity<>(categoryService.getCategories(id.toString()), HttpStatus.OK);
+////    }
 
     @GetMapping
     public List<Category> getAllCategories() {
@@ -37,10 +35,16 @@ public class CategoryApiController {
     public UUID save(@RequestBody @Valid SaveCategoryRequest request) {
         return categoryService.save(request);
     }
-
     @DeleteMapping("/{id}")
     void delete(@PathVariable UUID id) {
         categoryService.delete(id);
+    }
+    @GetMapping("/{id}")
+    public ResponseEntity<Category> get(@PathVariable UUID id) {
+        var item = this.categoryService.findById(id);
+        return item.isPresent()
+                ? ResponseEntity.ok(item.get())
+                : new ResponseEntity(HttpStatus.NOT_FOUND);
     }
 }
 
