@@ -65,7 +65,8 @@
                                                         onchange="this.form.submit()"
                                                 >
                                                     <option value="">All Categories</option>
-                                                    <option th:each="category : ${categories}" th:value="${category.id}" th:text="${category.name}"></option>
+                                                    <option th:each="category : ${categories}" th:value="${category.id}"
+                                                            th:text="${category.name}"></option>
                                                 </select>
                                             </div>
                                         </div>

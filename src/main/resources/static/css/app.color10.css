@@ -1524,6 +1524,7 @@ input::-ms-clear {
     display: block; }
     .product-short__name > a {
       font-size: 14px;
+      position: center;
       font-weight: 600;
       color: #333333;
       transition: color 0.5s; }
@@ -6030,30 +6031,12 @@ input::-ms-clear {
 
 .primary-style-3-wrap {
   position: absolute;
-  bottom: 120px;
   z-index: 1;
   width: 100%; }
 
 .hero-slide {
   background: center center/cover no-repeat; }
-  .hero-slide--1 {
-    background-image: url(../images/slider/slide-1.jpg); }
-  .hero-slide--2 {
-    background-image: url(../images/slider/slide-2.jpg); }
-  .hero-slide--3 {
-    background-image: url(../images/slider/slide-3.jpg); }
-  .hero-slide--4 {
-    background-image: url(../images/slider/slide-4.jpg); }
-  .hero-slide--5 {
-    background-image: url(../images/slider/slide-5.jpg); }
-  .hero-slide--6 {
-    background-image: url(../images/slider/slide-6.jpg); }
-  .hero-slide--7 {
-    background-image: url(../images/slider/slide-7.jpg); }
-  .hero-slide--8 {
-    background-image: url(../images/slider/slide-8.jpg); }
-  .hero-slide--9 {
-    background-image: url(../images/slider/slide-9.jpg); }
+
 
 .owl-carousel .owl-dots {
   position: absolute; }

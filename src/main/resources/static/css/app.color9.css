@@ -6035,26 +6035,8 @@ input::-ms-clear {
   width: 100%; }
 
 .hero-slide {
-  background: center center/cover no-repeat; }
-  .hero-slide--1 {
-    background-image: url(../images/slider/slide-1.jpg); }
-  .hero-slide--2 {
-    background-image: url(../images/slider/slide-2.jpg); }
-  .hero-slide--3 {
-    background-image: url(../images/slider/slide-3.jpg); }
-  .hero-slide--4 {
-    background-image: url(../images/slider/slide-4.jpg); }
-  .hero-slide--5 {
-    background-image: url(../images/slider/slide-5.jpg); }
-  .hero-slide--6 {
-    background-image: url(../images/slider/slide-6.jpg); }
-  .hero-slide--7 {
-    background-image: url(../images/slider/slide-7.jpg); }
-  .hero-slide--8 {
-    background-image: url(../images/slider/slide-8.jpg); }
-  .hero-slide--9 {
-    background-image: url(../images/slider/slide-9.jpg); }
-
+  background: url(../images/slider/fashion1.jpg) no-repeat center center;
+}
 .owl-carousel .owl-dots {
   position: absolute; }
 

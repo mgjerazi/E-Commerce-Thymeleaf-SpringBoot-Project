@@ -22,9 +22,9 @@ public class ProductController extends BaseController {
     }
 
     @GetMapping("/products")
-    public String getProducts(ModelMap modelMap) {
+    public String getProducts(ModelMap modelMap, ProductListFilter filter) {
         initModelMap(modelMap);
-        return filterProducts(new ProductListFilter(), modelMap);
+        return filterProducts(filter, modelMap);
     }
 
     @PostMapping("/products")

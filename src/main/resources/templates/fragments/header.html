@@ -281,24 +281,8 @@
 
                                     <span class="js-menu-toggle"></span>
                                     <ul style="width:170px">
-                                        <li class="">
-
-                                            <a>New Releases</a>
-                                        </li>
-
-                                        <li class="">
-
-                                            <a>Woman</a>
-                                        </li>
-
-                                        <li class="">
-
-                                            <a>Men</a>
-                                        </li>
-
-                                        <li class="">
-
-                                            <a>Sales</a>
+                                        <li th:each="item : ${rootCategories}" class="">
+                                            <a th:href="'/products?categoryId=' + ${item.id}" th:text="${item.name}"></a>
                                         </li>
                                     </ul>
                                     <!--====== End - Dropdown ======-->
