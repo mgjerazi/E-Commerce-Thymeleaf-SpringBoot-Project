@@ -13,7 +13,7 @@ Technologies:
 
 Angular 6 Typescript Spring Boot Hibernate with JPA MySQL
 
-Admin Panel project can be found in (https://github.com/mgjerazi/E-Commerce-Admin-Panel-Angular)
+Admin Panel project can be found in (https://github.com/mgjerazi/Admin-Panel-Angular-Front-End)
 
 -Application screenshots-
 
