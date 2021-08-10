@@ -1,17 +1,34 @@
-E-Commerce-Project
-Shopping Application (Angular with SpringBoot Web Services) E-Commerce application developed for performing Admin and Customer user role operations with respective user interfaces. Application is implemented in two parts:
+# E-Commerce-Project
 
-RESTfull web services: API's build using spring boot are used for handling all the back Front End: Admin Panel designed and developed using Angular utilising web services for handling appropriate user actions
+Shopping Application (Angular with SpringBoot Web Services) E-Commerce application developed for performing Admin and Customer user role operations with respective user interfaces. 
+Application is implemented in two parts:
+
+RESTfull web services: API's build using spring boot are used for handling all the back 
+Front End: Admin Panel designed and developed using Angular utilising web services for handling appropriate user actions
 
 Features available based on the user role:
 
--Admin- Adding products Updating products Deleting products Manage Orders
+-Admin- 
+Adding products 
+Updating products 
+Deleting products 
+Manage Orders
 
--Customer- Registering into System Login into Website Updating Address Adding product to Cart Updating/ Deleting the Product Placing the order
+-Customer- 
+Registering into System 
+Login into Website 
+Updating Address 
+Adding product to Cart 
+Updating/ Deleting the Product 
+Placing the order
 
 Technologies:
 
-Angular 6 Typescript Spring Boot Hibernate with JPA MySQL
+Angular 6 
+Typescript 
+Spring Boot 
+Hibernate with JPA 
+MySQL
 
 Admin Panel project can be found in (https://github.com/mgjerazi/Admin-Panel-Angular-Front-End)
 
