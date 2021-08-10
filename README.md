@@ -8,50 +8,44 @@ Front End: Admin Panel designed and developed using Angular utilising web servic
 
 Features available based on the user role:
 
+- Admin 
 
+Adding products
 
+Updating products
 
-#Admin
-
-
-
-Adding products, 
-
-Updating products, 
-
-Deleting products, 
+Deleting products
 
 Manage Orders
 
 
-#-Customer- 
+- Customer 
 
+Registering into System
 
-Registering into System, 
+Login into Website
 
-Login into Website, 
+Updating Address
 
-Updating Address, 
+Adding product to Cart
 
-Adding product to Cart, 
-
-Updating/ Deleting the Product, 
+Updating/ Deleting the Product
 
 Placing the order
 
 
-#-Technologies :
+- Technologies :
 
+Java 16
 
-Angular 6, 
+Spring Boot
 
-Typescript, 
-
-Spring Boot, 
-
-Hibernate with JPA, 
+Hibernate with JPA
 
 MySQL
+
+PostMan (For testing the web services)
+
 
 
 #Admin Panel project can be found in (https://github.com/mgjerazi/Admin-Panel-Angular-Front-End)
