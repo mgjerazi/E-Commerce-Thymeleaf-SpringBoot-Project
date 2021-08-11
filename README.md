@@ -2,7 +2,8 @@
 
 Shopping Application (SpringBoot Web Services with Thymeleaf and AngularJS)
 
-E-Commerce application developed for performing Admin and Customer user role operations with respective user interfaces. 
+E-Commerce application developed for performing Admin and Customer user role operations with respective user interfaces.
+
 Application is implemented in two parts:
 
 1.RESTfull web services: API's build using spring boot are used for handling all the back.
