@@ -48,11 +48,11 @@ PostMan (For testing the web services)
 
 
 
-#Admin Panel project can be found in (https://github.com/mgjerazi/Admin-Panel-Angular-Front-End)
+- Admin  Panel project can be found in (https://github.com/mgjerazi/Admin-Panel-Angular-Front-End)
 
-#-Application screenshots-
+- Application screenshots-
 
--Customer-
+- Customer
 
 Login
 
@@ -70,7 +70,7 @@ CheckOut
 
 ![Checkout](https://user-images.githubusercontent.com/74839767/128939325-67e2b0f2-17e2-4cd9-ae13-329b01662f79.PNG)
 
--Admin-
+- Admin Panel
 
 Categories
 
@@ -80,6 +80,6 @@ Add Products to the website
 
 ![Add-Products](https://user-images.githubusercontent.com/74839767/128939386-790fd9ae-5225-4ae7-b940-c20a29c7631d.PNG)
 
-This project was generated with Angular CLI version 12.0.0 and Java Spring Boot.
+- This project was generated with Angular CLI version 12.0.0 and Java Spring Boot.
 
 Run ng serve for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
