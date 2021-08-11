@@ -29,8 +29,6 @@ Registering into System
 
 Login into Website
 
-Updating Address
-
 Adding product to Cart
 
 Updating/ Deleting the Product
