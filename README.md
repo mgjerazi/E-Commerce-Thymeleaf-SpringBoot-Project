@@ -50,9 +50,9 @@ PostMan (For testing the web services)
 
 - Admin  Panel project can be found in (https://github.com/mgjerazi/Admin-Panel-Angular-Front-End)
 
-- Application screenshots-
+Application screenshots below 
 
-- Customer
+- For Customer Navigation
 
 Login
 
