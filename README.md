@@ -1,6 +1,7 @@
 # E-Commerce-Project
 
 Shopping Application (SpringBoot Web Services with Thymeleaf and AngularJS)
+
 E-Commerce application developed for performing Admin and Customer user role operations with respective user interfaces. 
 Application is implemented in two parts:
 
