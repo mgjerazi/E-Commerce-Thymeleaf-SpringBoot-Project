@@ -84,4 +84,10 @@ Add Products to the website
 
 ![Add-Products](https://user-images.githubusercontent.com/74839767/128939386-790fd9ae-5225-4ae7-b940-c20a29c7631d.PNG)
 
+MySQL Diagram/Relationship
+
+![Database](https://user-images.githubusercontent.com/74839767/129036489-a8d2e951-9f16-4357-8e8b-f4983bc54383.PNG)
+
+
+
 - This project was generated with Java Thymeleaf Spring Boot, MySQL Database and Angular CLI version 12.0.0 .
