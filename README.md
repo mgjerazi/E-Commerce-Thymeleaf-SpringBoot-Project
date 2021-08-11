@@ -80,6 +80,4 @@ Add Products to the website
 
 ![Add-Products](https://user-images.githubusercontent.com/74839767/128939386-790fd9ae-5225-4ae7-b940-c20a29c7631d.PNG)
 
-- This project was generated with Angular CLI version 12.0.0 and Java Spring Boot.
-
-Run ng serve for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
+- This project was generated with Angular CLI version 12.0.0 and Java Thymeleaf Spring Boot.
