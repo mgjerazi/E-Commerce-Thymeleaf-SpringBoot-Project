@@ -5,6 +5,7 @@ E-Commerce application developed for performing Admin and Customer user role ope
 Application is implemented in two parts:
 
 1.RESTfull web services: API's build using spring boot are used for handling all the back.
+
 2.Front-End: Admin Panel designed and developed using Angular utilising web services for handling appropriate user actions
 
 Features available based on the user role:
@@ -47,7 +48,7 @@ MySQL
 
 AngularJS
 
-PostMan (For testing the web services)
+Postman (For testing the web services)
 
 
 
