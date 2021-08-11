@@ -1,4 +1,4 @@
-# E-Commerce-Project
+# E-Commerce Project
 
 Shopping Application (SpringBoot Web Services with Thymeleaf and AngularJS)
 
