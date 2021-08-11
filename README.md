@@ -14,11 +14,11 @@ Features available based on the user role:
 
 - Admin 
 
-Adding products
+Adding Products/Categories
 
-Updating products
+Updating Products
 
-Deleting products
+Deleting Products
 
 Manage Orders
 
@@ -41,6 +41,8 @@ Placing the order
 Java 16
 
 Spring Boot
+
+Thymeleaf
 
 Hibernate with JPA
 
