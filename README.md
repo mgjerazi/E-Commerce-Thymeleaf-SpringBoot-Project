@@ -1,10 +1,11 @@
 # E-Commerce-Project
 
-Shopping Application (Angular with SpringBoot Web Services) E-Commerce application developed for performing Admin and Customer user role operations with respective user interfaces. 
+Shopping Application (SpringBoot Web Services with Thymeleaf and AngularJS)
+E-Commerce application developed for performing Admin and Customer user role operations with respective user interfaces. 
 Application is implemented in two parts:
 
-RESTfull web services: API's build using spring boot are used for handling all the back 
-Front End: Admin Panel designed and developed using Angular utilising web services for handling appropriate user actions
+1.RESTfull web services: API's build using spring boot are used for handling all the back.
+2.Front-End: Admin Panel designed and developed using Angular utilising web services for handling appropriate user actions
 
 Features available based on the user role:
 
@@ -42,7 +43,9 @@ Spring Boot
 
 Hibernate with JPA
 
-MySQL
+MySQL 
+
+AngularJS
 
 PostMan (For testing the web services)
 
@@ -80,4 +83,4 @@ Add Products to the website
 
 ![Add-Products](https://user-images.githubusercontent.com/74839767/128939386-790fd9ae-5225-4ae7-b940-c20a29c7631d.PNG)
 
-- This project was generated with Angular CLI version 12.0.0 and Java Thymeleaf Spring Boot.
+- This project was generated with Java Thymeleaf Spring Boot, MySQL Database and Angular CLI version 12.0.0 .
