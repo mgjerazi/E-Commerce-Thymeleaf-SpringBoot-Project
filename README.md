@@ -36,7 +36,7 @@ Updating/ Deleting the Product
 Placing the order
 
 
-- Technologies :
+- Technologies
 
 Java 16
 
