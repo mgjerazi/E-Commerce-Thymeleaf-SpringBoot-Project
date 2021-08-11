@@ -12,7 +12,7 @@ Application is implemented in two parts:
 
 Features available based on the user role:
 
-- Admin -
+- Admin
 
 Adding Products/Categories
 
