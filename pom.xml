@@ -8,11 +8,13 @@
 		<version>2.5.3</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
+
 	<groupId>com.sda.java3.ecommerce</groupId>
 	<artifactId>e-commerce</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 	<name>e-commerce</name>
+
 	<description>E-Commerce project </description>
 
 	<properties>
