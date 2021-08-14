@@ -92,4 +92,4 @@ MySQL Diagram/Relationship
 
 
 
-- This project was generated with Java Thymeleaf Spring Boot, MySQL Database and Angular CLI version 12.0.0 .
+- This project was generated with Java, Spring Boot, Thymeleaf, MySQL and Angular CLI version 12.0.0 .
