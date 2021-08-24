@@ -100,19 +100,17 @@
 
 	</dependencies>
 
-	<build>
 
+
+	<build>
 		<plugins>
 
-
-
 			<plugin>
-
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<version>2.5.3</version>
-
 				<configuration>
+					<finalName> EcommerceFinalWar </finalName>
 					<excludes>
 						<exclude>
 							<groupId>org.projectlombok</groupId>
