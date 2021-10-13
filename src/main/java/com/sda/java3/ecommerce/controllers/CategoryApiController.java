@@ -1,6 +1,7 @@
 package com.sda.java3.ecommerce.controllers;
 
 import com.sda.java3.ecommerce.domains.Category;
+import com.sda.java3.ecommerce.domains.Product;
 import com.sda.java3.ecommerce.services.category.CategoryService;
 import com.sda.java3.ecommerce.services.category.SaveCategoryRequest;
 import com.sda.java3.ecommerce.services.product.SaveProductRequest;
@@ -22,10 +23,10 @@ public class CategoryApiController {
 
 //    @GetMapping("/id")
 //    public ResponseEntity<Product> getProductById(@PathVariable UUID id) {
-////        var item = this.productService.getProductById(id.toString());
+//        var item = this.productService.getProductById(id.toString());
 //
-////        return new ResponseEntity<>(categoryService.getCategories(id.toString()), HttpStatus.OK);
-////    }
+//        return new ResponseEntity<>(categoryService.getCategories(id.toString()), HttpStatus.OK);
+//    }
 
     @GetMapping
     public List<Category> getAllCategories() {
