@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.UUID;
 
 public interface ProductRepository extends JpaRepository<Product, UUID> {
-    @Query(value = "SELECT p FROM Product p where p.featured = 1")
+    @Query(value = "SELECT p FROM Product p where p.featured = true ")
     List<Product> getFeaturedProducts();
 
     @Query(nativeQuery = true, value = "SELECT * FROM ec_product p ORDER BY p.created_at DESC LIMIT 8")

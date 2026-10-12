@@ -2,7 +2,6 @@ package com.sda.java3.ecommerce.services.category;
 
 import com.sda.java3.ecommerce.domains.Category;
 import com.sda.java3.ecommerce.repositories.CategoryRepository;
-import lombok.var;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
